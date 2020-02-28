@@ -1,4 +1,5 @@
 ﻿using System;
+using SFML.System;
 
 namespace PokerSFML
 {
@@ -6,7 +7,8 @@ namespace PokerSFML
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("");
+            Poker game = new Poker();
+            game.Game();
         }
     }
 }
