@@ -1,25 +1,27 @@
-﻿using SFML.Graphics;
+﻿using PokerSFML.Services;
+using SFML.Graphics;
 using SFML.Window;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PokerSFML
 {
     class Poker
     {
-        static public RenderWindow Window;
-        public void Game()
+        public RenderWindow Window { get; set; }
+        public uint Height { get; set; }
+        public uint Width { get; set; }
+        public void Run()
         {
-            Window = new RenderWindow(new VideoMode(800,600), "Poker");
+            Height = 1366;
+            Width = 768;
+            Window = new RenderWindow(new VideoMode(Height, Width), "Poker");
             Window.SetVerticalSyncEnabled(true);
             Window.Closed += Window_Closed;
             while (Window.IsOpen)
             {
                 Window.DispatchEvents();
-
                 Window.Clear(Color.Green);
-
+                Window.Draw(SpriteManager.Shirt);
                 Window.Display();
             }
         }

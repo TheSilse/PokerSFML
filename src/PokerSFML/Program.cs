@@ -1,5 +1,4 @@
-﻿using System;
-using SFML.System;
+﻿using PokerSFML.Services;
 
 namespace PokerSFML
 {
@@ -7,8 +6,9 @@ namespace PokerSFML
     {
         static void Main(string[] args)
         {
+            SpriteManager.Init();
             Poker game = new Poker();
-            game.Game();
+            game.Run();
         }
     }
 }
