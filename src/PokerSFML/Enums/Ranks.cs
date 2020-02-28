@@ -6,7 +6,7 @@ namespace PokerSFML.Enums
 {
     enum Ranks
     {
-        Two,
+        Two=2,
         Three,
         Four,
         Five,
