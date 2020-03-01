@@ -13,11 +13,14 @@ namespace PokerSFML
         public uint Height { get; set; }
         public uint Width { get; set; }
         private RenderWindow _win { get; set; }
+
+        private DrawableCollection _drawableCollection;
         public Window(uint height, uint width)
         {
             Height = height;
             Width = width;
             _win = new RenderWindow(new VideoMode(Height, Width), "Poker");
+            _drawableCollection = new DrawableCollection();
         }
         
         public async Task RunAsync()
@@ -28,6 +31,7 @@ namespace PokerSFML
             {
                 _win.DispatchEvents();
                 _win.Clear(Color.White);
+                _win.Draw(_drawableCollection);
                 _win.Display();
             }
         }
